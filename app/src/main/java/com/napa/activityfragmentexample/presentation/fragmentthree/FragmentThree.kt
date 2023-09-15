@@ -6,13 +6,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.napa.activityfragmentexample.R
+import com.napa.activityfragmentexample.databinding.FragmentOneBinding
+import com.napa.activityfragmentexample.databinding.FragmentThreeBinding
 
 class FragmentThree : Fragment() {
+    private lateinit var binding: FragmentThreeBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+        binding = FragmentThreeBinding.inflate(inflater,container,false)
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_three, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
     }
 }
